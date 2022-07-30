@@ -1,0 +1,42 @@
+#include<stdio.h>
+int main()
+{
+    int i,j,s=0,c=0,k=0,n,arr[100],p;
+    float m;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        c=1;
+        if(arr[i]==-1)
+        {
+            continue;
+        }
+        for(j=i+1;j<n;j++)
+        {
+            if(arr[i]==arr[j])
+            {
+                c++;
+                arr[j]=-1;
+            }
+        }
+        if(arr[i]==c)
+        {
+            p=1;
+            s=s+arr[i];
+            k++;
+        }
+    }
+    if(p!=1)
+    {
+        printf("-1");
+    }
+    else
+    {
+        m=s/float(k);
+        printf("%.2f",m);
+    }
+}
